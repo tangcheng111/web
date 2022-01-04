@@ -112,13 +112,13 @@
     border: 1px solid #4b8df8;
 }
 .video_content .content_left{
-    width: 180px;
+    width: 220px;
     box-sizing: border-box;
     border-right:1px solid #4b8df8;
     height: 100%;
 }
 .video_content .content_left .left_title{
-    width: 180px;
+    width: 220px;
     color:#fff;
     height: 30px;
     line-height: 30px;
@@ -175,13 +175,13 @@
 
 
 .video_content .content_right{
-    width: 200px;
+    width: 220px;
     box-sizing: border-box;
     border-left:1px solid #4b8df8;
     height: 100%;
 }
 .video_content .content_right .right_title{
-    width: 200px;
+    width: 220px;
     color:#fff;
     height: 30px;
     line-height: 30px;
@@ -222,7 +222,7 @@
     margin-bottom: 5px;
 }
 .video_content .content_center{
-    width: calc(100% - 380px);
+    width: calc(100% - 440px);
     background: url("../img/map.png") no-repeat;
 }
 .video_content .content_center .map{
