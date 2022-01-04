@@ -79,8 +79,8 @@ $(function () {
             ],
             barColor: ['#3FA7DC', '#7091C4', '#5170A2'], //柱子颜色 必填参数
             lineColor: ['#D9523F'], // 折线颜色
-
         };
+
         /////////////end/////////
 
         var myData = (function test() {
@@ -143,7 +143,7 @@ $(function () {
                     },
                     label: {
                         normal: {
-                            show: false, //折线上方label控制显示隐藏
+                            show: true, //折线上方label控制显示隐藏
                             position: 'top',
                         }
                     },
