@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>充电查询</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!--header开始-->
+<div class="header">
+    <div class="header_logo fl">
+        <a href="#"><img src="img/header_logo.png" alt=""></a>
+    </div>
+    <div class="showTime">当前时间：2021年12月28-0时54分14秒</div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    <div class="header_nav fl">
+        <ul>
+            <li>
+                <img src="img/nav_1.png" alt="">
+                <a href="index.html" >数据概览</a>
+            </li>
+            <!-- <li>
+                <img src="img/nav_2.png" alt="">
+                <a href="#">车辆监控</a>
+            </li> -->
+            <li>
+                <img src="img/nav_7.png" alt="">
+                <a href="查询统计.html">查询统计</a>
+            </li>
+            <li>
+                <img src="img/nav_3.png" alt="">
+                <a href="充电查询.html" class="nav_current">充电查询</a>
+            </li>
+            <!-- <li>
+                <img src="img/nav_4.png" alt="">
+                <a href="#">参数设置</a>
+            </li>
+            <li>
+                <img src="img/nav_5.png" alt="">
+                <a href="#">车载视频</a>
+            </li> -->
+            <li>
+                <img src="img/nav_6.png" alt="">
+                <a href="数据下载.html">数据下载</a>
+            </li>
+            <!--<li>-->
+                <!--<img src="img/nav_8.png" alt="">-->
+                <!--<a href="#">行业应用</a>-->
+            <!--</li>-->
+            <!-- <li>
+                <img src="img/nav_9.png" alt="">
+                <a href="#">系统设置</a>
+            </li> -->
+        </ul>
+    </div>
+    <div class="header_myself fr">
+        <p>用户：管理员</p>
+        <a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">注销 &nbsp;<span class="caret"></span></a>
+    </div>
+</div>
+<!--header结束-->
+
+<!--content开始-->
+<div class="content">
+    <div class="content_title">
+        <img src="img/content_title.png" alt="" class="fl">
+        <p>充电桩查询</p>
+    </div>
+    <div class="content_main">
+        <div class="form-inline content_search">
+            <div class="form-group">
+                <label>区域</label>
+                <input type="text" class="form-control"  placeholder=" ">
+            </div>
+            <div class="form-group">
+                <label >来源：</label>
+                <select class="form-control">
+                    <option>请选择</option>
+                    <option>车载终端</option>
+                    <option>充电桩</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label >具体地点：</label>
+                <input type="text" class="form-control"  placeholder="">
+            </div>
+            <button type="button" class="btn btn-primary">查询</button>
+            <button type="button" class="btn btn-danger">重置</button>
+        </div>
+        <div class="content_table">
+            <div class="table_ipt">
+                <button type="button" class="btn btn-primary">查看</button>
+                <button type="button" class="btn btn-success" id="add_ipt">添加</button>
+                <button type="button" class="btn btn-info">编辑</button>
+                <button type="button" class="btn btn-danger">删除</button>
+            </div>
+            <table class="table table-bordered table-hover table-condensed table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>ID</th>
+                    <th>充电地点</th>
+                    <th>充电桩编号</th>
+                    <th>充电类型</th>
+                    <th>剩余电量</th>
+                    <th>来源</th>
+                    <th>预计离开时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>XX小区</td>
+                    <td>21</td>
+                    <td>快充</td>
+                    <td>83%</td>
+                    <td>车载终端</td>
+                    <td>17:42</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>XX小区</td>
+                    <td>11</td>
+                    <td>慢充</td>
+                    <td>100%</td>
+                    <td>车载终端</td>
+                    <td>09:02</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>XX小区</td>
+                    <td>14</td>
+                    <td>快充</td>
+                    <td>23%</td>
+                    <td>车载终端</td>
+                    <td>11:40</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>4</td>
+                    <td>XX小区</td>
+                    <td>7</td>
+                    <td>快充</td>
+                    <td>77%</td>
+                    <td>充电桩</td>
+                    <td>13:44</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>5</td>
+                    <td>XX小区</td>
+                    <td>19</td>
+                    <td>慢充</td>
+                    <td>65%</td>
+                    <td>车载终端</td>
+                    <td>20:12</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>6</td>
+                    <td>XX小区</td>
+                    <td>20</td>
+                    <td>慢充</td>
+                    <td>80%</td>
+                    <td>充电桩</td>
+                    <td>07:40</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>XX小区</td>
+                    <td>24</td>
+                    <td>快充</td>
+                    <td>42%</td>
+                    <td>车载终端</td>
+                    <td>10:50</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>8</td>
+                    <td>XX小区</td>
+                    <td>22</td>
+                    <td>快充</td>
+                    <td>12%</td>
+                    <td>充电桩</td>
+                    <td>11:55</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>9</td>
+                    <td>XX小区</td>
+                    <td>31</td>
+                    <td>快充</td>
+                    <td>88%</td>
+                    <td>车载终端</td>
+                    <td>21:32</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>10</td>
+                    <td>XX小区</td>
+                    <td>33</td>
+                    <td>快充</td>
+                    <td>82%</td>
+                    <td>车载终端</td>
+                    <td>17:20</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="content_page fl">
+            <span class="fl">行数：</span>
+            <select name="" class="form-control fl">
+                <option value="">10</option>
+                <option value="">15</option>
+                <option value="">20</option>
+                <option value="">全部</option>
+            </select>
+            <span class="fl">显示1到10，共10条记录</span>
+        </div>
+        <nav aria-label="Page navigation" class="fr">
+            <ul class="pagination" style="margin: 0">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</div>
+<!--content结束-->
+
+
+
+
+<!--注销模态框  开始-->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">注销</h4>
+            </div>
+            <div class="modal-body">
+                <p>确认退出该系统吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--注销模态框  结束-->
+
+
+<!--添加模态框  开始-->
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 700px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">添加</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">车牌号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">颜色</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">来源</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option>请选择</option>
+                                <option>车载终端</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">企业名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">报警类型</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">视频终端</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">车辆总数</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+                    <div/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加模态框  结束-->
+
+
+
+</body>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+</html>

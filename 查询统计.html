@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设备监测统计大数据</title>
+    <link rel="stylesheet" href="css/css-查询统计/index.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/js-查询统计/jquery-2.2.1.min.js"></script>
+    <script src="js/js-查询统计/rem.js"></script>
+    <script src="js/js-查询统计/echarts.min.js"></script>
+    <script src="js/js-查询统计/guangxi.js"></script>
+    <script src="js/js-查询统计/index.js"></script>
+</head>
+<body>
+<div class="t_container">
+<!--header开始-->
+<div class="header">
+    <div class="header_logo fl">
+        <a href="#"><img src="img/header_logo.png" alt=""></a>
+    </div>
+    <div class="showTime" id="t_header">当前时间：2021年12月28-0时54分14秒</div>
+      <script> 
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    <div class="header_nav fl">
+        <ul>
+            <li>
+                <img src="img/nav_1.png" alt="">
+                <a href="index.html" >数据概览</a>
+            </li>
+            <!-- <li>
+                <img src="img/nav_2.png" alt="">
+                <a href="#">车辆监控</a>
+            </li> -->
+            <li>
+                <img src="img/nav_7.png" alt="">
+                <a href="查询统计.html" class="nav_current">查询统计</a>
+            </li>
+            <li>
+                <img src="img/nav_3.png" alt="">
+                <a href="充电查询.html">充电查询</a>
+            </li>
+            <!-- <li>
+                <img src="img/nav_4.png" alt="">
+                <a href="#">参数设置</a>
+            </li>
+            <li>
+                <img src="img/nav_5.png" alt="">
+                <a href="#">车载视频</a>
+            </li> -->
+            <li>
+                <img src="img/nav_6.png" alt="">
+                <a href="数据下载.html">数据下载</a>
+            </li>
+            <!--<li>-->
+                <!--<img src="img/nav_8.png" alt="">-->
+                <!--<a href="#">行业应用</a>-->
+            <!--</li>-->
+            <!-- <li>
+                <img src="img/nav_9.png" alt="">
+                <a href="#">系统设置</a>
+                <ul>
+                    <li>
+                        <a href="#">平台管理</a>
+                        <ul>
+                            <li><a href="#">平台管理1</a></li>
+                            <li><a href="#">平台管理2</a></li>
+                            <li><a href="#">平台管理3</a></li>
+                            <li><a href="#">平台管理3</a></li>
+                            <li><a href="#">平台管理3</a></li>
+                            <li><a href="#">平台管理3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">设备管理</a>
+                        <ul>
+                            <li><a href="#">设备管理1</a></li>
+                            <li><a href="#">设备管理2</a></li>
+                            <li><a href="#">设备管理3</a></li>
+                            <li><a href="#">设备管理4</a></li>
+                            <li><a href="#">设备管理5</a></li>
+                            <li><a href="#">设备管理6</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">系统设置</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+    <div class="header_myself fr">
+        <p>用户：管理员</p>
+        <a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">注销 &nbsp;<span class="caret"></span></a>
+    </div>
+</div>
+<!--header结束-->
+
+<!--content开始-->
+<main class="t_main">
+    <div class="t_left_box">
+        <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+        <div class="t_mbox t_rbox">
+            <i></i>
+            <span>公务车</span>
+            <h2>8000</h2>
+        </div>
+        <div class="t_mbox t_gbox">
+            <i></i>
+            <span>私家车</span>
+            <h2>7000</h2>
+        </div>
+        <div class="t_mbox t_ybox">
+            <i></i>
+            <span>出租车</span>
+            <h2>6000</h2>
+        </div>
+        <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+    </div>
+    <div class="t_center_box">
+        <div class="t_top_box">
+            <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+            <ul class="t_nav">
+                <li>
+                    <span>网关部署数目</span>
+                    <h1>10000</h1>
+                    <i></i>
+                </li>
+                <li>
+                    <span>上月网关增加数</span>
+                    <h1>1000</h1>
+                    <i></i>
+                </li>
+                <li>
+                    <span>网关月增率</span>
+                    <h1>10%</h1>
+                </li>
+            </ul>
+            <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+        </div>
+        <div class="t_bottom_box">
+            <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+            <div id="chart_3" class="echart" style="width: 100%; height: 3.6rem;"></div>
+            <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+        </div>
+    </div>
+    <div class="t_right_box">
+            <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+            <div id="chart_4" class="echart" style="width: 50%; height: 4.6rem; position: absolute;"></div>
+            <header class="t_b_h">
+                <span>当前城市-梧州</span>
+                <!-- <img src="img/img-查询统计/end.png"></img> 
+                <h3>15<span>次</span></h3> -->
+            </header>
+            <main class="t_b_m">
+                <img src="img/img-查询统计/map.png" alt="">
+                <div class="t_b_box">
+                    <span>溫度</span>
+                    <i></i>
+                    <h2>23℃</h2>
+                </div>
+                <div class="t_b_box1">
+                    <span>湿度</span>
+                    <i></i>
+                    <h2>56RH</h2>
+                </div>
+                <div class="t_b_box2">
+                    <span>天气</span>
+                    <i></i>
+                    <h2>晴天</h2>
+                </div>
+                <div class="t_b_box3">
+                    <span>出行</span>
+                    <i></i>
+                    <h2>适宜</h2>
+                </div>
+            </main>
+            <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+    </div>
+    <div class="b_left_box">
+            <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+            <div id="chart_2" class="echart" style="width: 100%; height: 3.6rem;"></div>
+            <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+    </div>
+    <div class="b_center_box">
+            <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+            <div id="chart_1" class="echart" style="width: 100%; height: 3.6rem;"></div>
+            <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+    </div>
+    <div class="b_right_box">
+            <img class="t_l_line" src="img/img-查询统计/left_line.png" alt="">
+            <h1 class="t_title">线下门店信息</h1>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>城市</th>
+                        <th>联系人</th>
+                        <th>咨询电话</th>
+                        <th>门店地址</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>梧州</td>
+                        <td>张伟</td>
+                        <td>13100000000</td>
+                        <td>XXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>柳州</td>
+                        <td>张伟</td>
+                        <td>13100000000</td>
+                        <td>XXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>河池</td>
+                        <td>张伟</td>
+                        <td>13100000000</td>
+                        <td>XXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>崇左</td>
+                        <td>张伟</td>
+                        <td>13100000000</td>
+                        <td>XXXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>北海</td>
+                        <td>张伟</td>
+                        <td>13100000000</td>
+                        <td>XXXXXXXX</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img class="t_r_line" src="img/img-查询统计/right_line.png" alt="">
+    </div>
+</main>
+</div>
+<!--content结束-->    
+
+</body>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+</html>

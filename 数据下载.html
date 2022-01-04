@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据下载</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/test.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!--header开始-->
+<div class="header">
+    <div class="header_logo fl">
+        <a href="#"><img src="img/header_logo.png" alt=""></a>
+    </div>
+    <div class="showTime">当前时间：2021年12月28-0时54分14秒</div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    <div class="header_nav fl">
+        <ul>
+            <li>
+                <img src="img/nav_1.png" alt="">
+                <a href="index.html">数据概览</a>
+            </li>
+            <!-- <li>
+                <img src="img/nav_2.png" alt="">
+                <a href="#">车辆监控</a>
+            </li> -->
+            <li>
+                <img src="img/nav_7.png" alt="">
+                <a href="查询统计.html">查询统计</a>
+            </li>
+            <li>
+                <img src="img/nav_3.png" alt="">
+                <a href="充电查询.html">充电查询</a>
+            </li>
+            <!-- <li>
+                <img src="img/nav_4.png" alt="">
+                <a href="#">参数设置</a>
+            </li>
+            <li>
+                <img src="img/nav_5.png" alt="">
+                <a href="#">车载视频</a>
+            </li> -->
+            <li>
+                <img src="img/nav_6.png" alt="">
+                <a href="数据下载.html"  class="nav_current">数据下载</a>
+            </li>
+            <!--<li>-->
+                <!--<img src="img/nav_8.png" alt="">-->
+                <!--<a href="#">行业应用</a>-->
+            <!--</li>-->
+            <!-- <li>
+                <img src="img/nav_9.png" alt="">
+                <a href="#">系统设置</a>
+            </li> -->
+        </ul>
+    </div>
+    <div class="header_myself fr">
+        <p>用户：管理员</p>
+        <a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">注销 &nbsp;<span class="caret"></span></a>
+    </div>
+</div>
+<!--header结束-->
+
+<!--content开始-->
+<div class="content video_content">
+    <div class="content_left fl">
+        <div class="left_title"><p>导航菜单</p></div>
+        <div class="left_search">
+            <div class="form-group">
+                <input type="text" class="form-control"  placeholder="汽车型号">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control"  placeholder="车牌号">
+            </div>
+            <select class="form-control">
+                <option>企业名称</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <select class="form-control">
+                <option>汽车种类</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group" style="text-align: center">
+            <button type="button" class="btn btn-primary">搜索</button>
+            <button type="button" class="btn btn-danger">重置</button>
+        </div>
+        <div class="left_table">
+            <table class="table table-condensed table-hover" style="margin-bottom: 0">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>终端号</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>12345</td>
+                    <td>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_1.png" alt=""></a>
+                        <a href="#"><img src="img/table_3.png" alt=""></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table_page">
+            <button class="btn btn-default" type="button">上页</button>
+            <span>第1页</span>
+            <button class="btn btn-default" type="button">下页</button>
+            <span>共8条</span>
+        </div>
+    </div>
+    <div class="content_center fl">
+        <div class="center_top">
+            <div class="map"></div>
+            <div class="center_title">
+                <p>我的关注</p>
+            </div>
+            <div class="center_table">
+                <table class="table table-bordered table-hover table-condensed">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>汽车种类</th>
+                        <th>汽车型号</th>
+                        <th>更新时间</th>
+                        <th>电压</th>
+                        <th>电流</th>
+                        <th>SOC</th>
+                        <th>充电行为</th>
+                        <th>更多</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>A</td>
+                        <td>123</td>
+                        <td>2021-02-13 13:22:35</td>
+                        <td><a href="https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Fiot.console.aliyun.com%2Flk%2Fsummary%2Fnew&lang=zh" target="_blank"><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">查看</button></td>
+                        <!-- <td><a href="#"><img src="img/table_1.png" alt=""></a>
+                            <a href="#"><img src="img/table_3.png" alt=""></a>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>B</td>
+                        <td>456</td>
+                        <td>2021-06-13 13:22:35</td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">查看</button></td>
+                        <!-- <td><a href="#"><img src="img/table_1.png" alt=""></a>
+                            <a href="#"><img src="img/table_3.png" alt=""></a>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>C</td>
+                        <td>789</td>
+                        <td>2021-11-13 13:22:35</td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">查看</button></td>
+                        <!-- <td><a href="#"><img src="img/table_1.png" alt=""></a>
+                            <a href="#"><img src="img/table_3.png" alt=""></a>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>D</td>
+                        <td>111</td>
+                        <td>2021-12-13 13:22:35</td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">下载</button></td>
+                        <td><button name="button">查看</button></td>
+                        <!-- <td><a href="#"><img src="img/table_1.png" alt=""></a>
+                            <a href="#"><img src="img/table_3.png" alt=""></a>
+                        </td> -->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="content_right fr">
+        <div class="right_title"><p>辅助窗口</p></div>
+        <div>
+            <div class="title_1"><p>轨迹回放</p></div>
+            <div class="right_search">
+                <div class="form-group">
+                    <input type="text" class="form-control"  placeholder="车牌号">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"  placeholder="车牌号">
+                </div>
+                <select class="form-control">
+                    <option>企业名称</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group" style="text-align: center">
+                <button type="button" class="btn btn-primary">搜索轨迹</button>
+            </div>
+        </div>
+        <div>
+            <div class="title_1"><p>轨迹信息</p></div>
+            <div class="right_info">
+                <p>定位时间：</p>
+                <p>经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</p>
+                <p>纬&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</p>
+                <p>方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向：</p>
+                <p>速&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</p>
+            </div>
+        </div>
+        <div>
+            <div class="title_1"><p>轨迹工具</p></div>
+        </div>
+
+    </div>
+
+</div>
+<!--content结束-->
+
+
+
+
+
+</body>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+</html>
